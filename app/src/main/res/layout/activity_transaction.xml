@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Budgeteer"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:padding="16dp"
+            android:gravity="start" />
+
+        <LinearLayout
+            android:id="@+id/ll_file_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btn_choose_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose CSV File"
+                android:layout_marginEnd="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_file_names"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_delete_file_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete Selected Data"
+                android:layout_marginStart="16dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_csv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transactions"
+            android:padding="16dp"
+            android:textColor="#000000"/>
+
+        <com.evrencoskun.tableview.TableView
+            android:id="@+id/tableView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5"
+            android:scrollbars="vertical"/>
+    </LinearLayout>
+</layout>
