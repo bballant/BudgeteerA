@@ -91,7 +91,7 @@ class TransactionActivity : AppCompatActivity() {
                         val rowHeaders = mutableListOf<String>()
                         val cellData = mutableListOf<List<String>>()
                         updatedTransactions.forEach {
-                            rowHeaders.add(it.id.toString())
+                            //rowHeaders.add(it.id.toString())
                             cellData.add(listOf(
                                 it.id.toString(),
                                 it.date,
@@ -128,6 +128,10 @@ class TransactionActivity : AppCompatActivity() {
         
         // Fetch transactions and prepare data for the TableView
         val transactionsList = db.transactionDao().getAll()
+        if (transactionsList.isNotEmpty()) {
+            binding.tvCsvPreview.text = "Transactions (${transactionsList.size})"
+        }
+
         val columnHeaders = listOf("ID", "Date", "Description", "Amount", "Ingest Timestamp", "Ingest File")
         val rowHeaders = mutableListOf<String>()
         val cellData = mutableListOf<List<String>>()

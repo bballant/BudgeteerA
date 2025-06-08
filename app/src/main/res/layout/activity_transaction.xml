@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
     </data>
     <LinearLayout
@@ -32,17 +34,17 @@
                 android:text="Choose CSV File"
                 android:layout_marginEnd="16dp"/>
 
-            <Spinner
-                android:id="@+id/spinner_file_names"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content" />
-
             <Button
                 android:id="@+id/btn_delete_file_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delete Selected Data"
+                android:text="Delete Data From File:"
                 android:layout_marginStart="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_file_names"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <TextView
@@ -59,6 +61,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="#F5F5F5"
-            android:scrollbars="vertical"/>
+            android:scrollbars="vertical"
+            app:row_header_width="0dp" />
     </LinearLayout>
 </layout>
